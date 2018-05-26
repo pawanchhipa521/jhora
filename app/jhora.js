@@ -7,7 +7,6 @@ jhora.controller('jhoraCtrl', function($rootScope, $scope, VILLAGES, TABS) {
   $scope.currentNavItem = '0';
   $scope.navClosed = true;
   $scope.tabs = TABS;
-  $rootScope.editMode = false;
   $rootScope.editModeData = {};
   
   $rootScope.template = $scope.tabs[0];
@@ -50,13 +49,26 @@ jhora.controller('jhoraCtrl', function($rootScope, $scope, VILLAGES, TABS) {
 jhora.config(function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : 'file://' + __dirname + '/index2.html'
+        templateUrl : 'file://' + __dirname + '/customer/addCustomers.html'
+        //templateUrl : 'file://' + __dirname + '/index2.html'
     })
-    .when("/hello", {
+    .when("/customers", {
         templateUrl : 'file://' + __dirname + '/customer/viewCustomers.html'
     })
-    .when("/client", {
-        templateUrl : 'file://' + __dirname + '/customer/viewCustomers.html'
+    .when("/customers/add", {
+        templateUrl : 'file://' + __dirname + '/customer/addCustomers.html'
+    })
+    .when("/customers/update/:id", {
+        templateUrl : 'file://' + __dirname + '/customer/updateCustomers.html'
+    })
+    .when("/transactions", {
+        templateUrl : 'file://' + __dirname + '/transaction/viewTransactions.html'
+    })
+    .when("/transactions/add", {
+        templateUrl : 'file://' + __dirname + '/transaction/addTransactions.html'
+    })
+    .when("/transactions/update/:id", {
+        templateUrl : 'file://' + __dirname + '/transaction/updateTransactions.html'
     });
     $locationProvider.hashPrefix('!');
     $locationProvider.html5Mode({enabled: false, requireBase: false});

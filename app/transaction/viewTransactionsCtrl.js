@@ -8,7 +8,7 @@ jhora.controller('viewTransactionsCtrl', function($rootScope, $scope, TRANSACTIO
     $scope.customer = { name: '', mobile: '', village: '', father: '', guarantor: '', rate:'', date: undefined, pageNo: '', remarks: '' };
     
     $scope.editTransaction = (transaction)=>{
-      $rootScope.editMode = true;
+      //TODO
       $rootScope.editModeData = transaction;
       $rootScope.template = {title: 'Edit Transaction', content :'transaction/updateTransaction.html'};
     };

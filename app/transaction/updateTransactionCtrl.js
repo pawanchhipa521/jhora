@@ -18,7 +18,7 @@ jhora.controller('updateTransactionCtrl', function($rootScope, $scope, TRANSACTI
     $scope.disablePromiseDate = true;
     
     $scope.cancelUpdate = () =>{
-      $rootScope.template = {title: 'Transaction', content :'transaction/viewTransaction.html'};
+      $rootScope.template = {title: 'Transaction', content :'transaction/viewTransactions.html'};
     };
     
     $scope.dateSelected =()=>{
@@ -67,7 +67,7 @@ jhora.controller('updateTransactionCtrl', function($rootScope, $scope, TRANSACTI
       .then((data)=>{
           $scope.resetTransaction();
           dialog.showMessageBox({type :'info', message:'Data submitted', buttons:[]});
-          $rootScope.template = {title: 'Trasactions', content:'transaction/viewTransaction.html'}
+          $rootScope.template = {title: 'Trasactions', content:'transaction/viewTransactions.html'}
       })
       .catch((err)=>{
           console.error('anp err occured while insertion')

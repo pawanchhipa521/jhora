@@ -12,7 +12,7 @@ jhora.controller('addTransactionCtrl', function($rootScope, $scope, TRANSACTION_
     $scope.disablePromiseDate = true;
         
     $scope.cancelUpdate = () =>{
-      $rootScope.template = {title: 'Transaction', content :'transaction/viewTransaction.html'};
+      $rootScope.template = {title: 'Transaction', content :'transaction/viewTransactions.html'};
     };
     
     $scope.dateSelected =()=>{

@@ -37,8 +37,8 @@ jhora.controller('jhoraCtrl', function($rootScope, $scope, VILLAGES, TABS) {
 .constant('TABS', [
   {title:'Add Customer', content:'customer/addCustomer.html'},
   {title:'Add Transaction', content:'transaction/addTransaction.html'},
-  {title:'Customers', content:'customer/viewCustomer.html'},
-  {title:'Transactions', content:'transaction/viewTransaction.html'}
+  {title:'Customers', content:'customer/viewCustomers.html'},
+  {title:'Transactions', content:'transaction/viewTransactions.html'}
 ])
 .constant('TRANSACTION_TYPES', ['Dr', 'Cr', 'Settle'])
 .constant('VIEW_LIMITS', ['All', 'Deleted'])
@@ -47,18 +47,22 @@ jhora.controller('jhoraCtrl', function($rootScope, $scope, VILLAGES, TABS) {
 .constant('TRANSACTION_TABLE', 'transactions')
 .constant('DELTRANSACTION_TABLE', 'deltransactions');
 
-// jhora.config(function($routeProvider, $locationProvider) {
-//     $routeProvider
-//     .when("/", {
-//         templateUrl : "index2.html"
-//     });
-//     $locationProvider.hashPrefix('!');
-//     $locationProvider.html5Mode({enabled: false, requireBase: false});
-//     $locationProvider.html5Mode(true);
-//     $locationProvider.html5Mode({
-//       enabled: true,
-//       requireBase: false
-//     });
+jhora.config(function($routeProvider, $locationProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : 'file://' + __dirname + '/index2.html'
+    })
+    .when("/hello", {
+        templateUrl : 'file://' + __dirname + '/customer/viewCustomers.html'
+    })
+    .when("/client", {
+        templateUrl : 'file://' + __dirname + '/customer/viewCustomers.html'
+    });
+    $locationProvider.hashPrefix('!');
+    $locationProvider.html5Mode({enabled: false, requireBase: false});
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode({ enabled: true, requireBase: false
+    });
 // });
 // jhora.config(function($mdThemingProvider) {
 //   $mdThemingProvider.theme('docs-dark', 'default')

@@ -50,6 +50,7 @@ jhora.controller('updateCustomerCtrl', function($rootScope, $scope, CUSTOMERS_TA
       .then((data)=>{
         $scope.resetCustomer();
         dialog.showMessageBox({type :'info', message:'Data submitted', buttons:[]});
+        //TODO
         $rootScope.template = {title: 'Customers', content:'customer/viewCustomers.html'}
       })
       .catch((err)=>{

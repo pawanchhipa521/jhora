@@ -69,6 +69,9 @@ jhora.config(function($routeProvider, $locationProvider) {
     })
     .when("/transactions/update/:id", {
         templateUrl : 'file://' + __dirname + '/transaction/updateTransactions.html'
+    })
+    .when("/passbooks/view/:id", {
+        templateUrl : 'file://' + __dirname + '/passbook/viewPassbook.html'
     });
     $locationProvider.hashPrefix('!');
     $locationProvider.html5Mode({enabled: false, requireBase: false});

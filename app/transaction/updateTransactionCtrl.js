@@ -65,6 +65,7 @@ jhora.controller('updateTransactionCtrl', function($rootScope, $scope, TRANSACTI
       .then((data)=>{
           $scope.resetTransaction();
           dialog.showMessageBox({type :'info', message:'Data submitted', buttons:[]});
+          //TODO
           $rootScope.template = {title: 'Trasactions', content:'transaction/viewTransactions.html'}
       })
       .catch((err)=>{
